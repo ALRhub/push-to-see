@@ -1,0 +1,36 @@
+model:
+  path: /home/baris/Workspace/push-to-see/saved_models/push-DQN/
+  file: snapshot-41k_CoRL.pth # set 'new' for not loading a snapshot of a pretrained model
+
+detection_thresholds:
+  confidence_threshold: 0.85 # to define whether a prediction from mask_rg will be considered as a possible object/a detection
+  mask_threshold: 0.85 # to define whether a detection will be considered correct based on its quality (i.e. how well its segmentation mask matches the ground truth)
+  session_success_threshold: 0.90 #
+
+logging:
+  path: Default # Set 'Default' for ./log
+  continue_logging: False # to continue logging from previous session #TODO
+  save_visualizations: True # to save visualisations of FCN predictions
+  snapshot_saving_rate: 100 # to define how often the model weights will be saved
+
+environment:
+  workspace_limits: [[-0.724, -0.276], [-0.224, 0.224], [-0.0001, 0.4]] # to define workspace limits in robot coordinates (Cols: min max, Rows: x y z)
+                                                                        # (default val [[-0.724, -0.276], [-0.224, 0.224], [-0.0001, 0.4]])
+  heightmap_resolution: 0.002 # meters per pixel of heightmap (default val 0.002)
+
+  min_num_objects: 26 # Minimum number of objects that will be dropped in the simulation
+  max_num_objects: 32 # Maximum number of objects that will be dropped in the simulation (LIMIT 72!) #TODO current limit is less than 72 --> change the colour space of printed mask diff
+                      # The total number of objects per scene will be randomised between min and max!
+  session_limit: 30 # The number of iterations in each session. If a task cannot be solved within this limit, it's considered as a fail, otherwise success
+
+setup:
+  is_testing: True # If True --> Exploration Probability will be 0.0 !!!
+  exploration_probability: 0.0 # Initial exploration probability
+  epsilon_greedy_policy:
+    exploration_rate_decay: False # to set epsilon greedy exploration (from initial probability to min_exp_rate_decay)
+    min_exp_rate_decay: 0.0 # to define minimum value to which the exploration probability can reach
+  is_random_model: False # If true, exploration probability is set to 1.0 with no rate decay (CAUTION! if true, overrides above values and generates a total random model!)
+
+training:
+  future_reward_discount: 0.5
+
