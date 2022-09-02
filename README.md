@@ -1,4 +1,5 @@
-# Push-to-See: Learning Non-Prehensile Manipulation to Enhance Instance Segmentation via Deep Q-Learning
+# Push-to-See 
+## Learning Non-Prehensile Manipulation to Enhance Instance Segmentation via Deep Q-Learning
 This is the main repository of our Push-to-See model. For technical details, the paper is accessible via [this link.](https://ieeexplore.ieee.org/document/9811645)
 
 ### Model weights
