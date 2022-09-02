@@ -1,6 +1,6 @@
 model:
   path: /home/barisserhan/Workspace/push_to_see_saved_models/push-DQN/
-  file: snapshot-41k_CoRL.pth # set 'new' for not loading a snapshot of a pretrained model
+  file: push_dqn_41k.pth # set 'new' for not loading a snapshot of a pretrained model
 
 detection_thresholds:
   confidence_threshold: 0.85 # to define whether a prediction from mask_rg will be considered as a possible object/a detection
