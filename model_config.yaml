@@ -2,7 +2,7 @@ model:
   path: /home/barisserhan/Workspace/push_to_see_saved_models/mask_rg
   # set  'file:' to 'new' for training from scratch, 'pretrained' for transfer learning,
   # or the name of the save model file which is placed on the above path folder.
-  file: my_model_inria_v1_20ep-40ep__epoch_no_19_2020-09-04.00:12:07.pth #new
+  file: maskrg_inria_v1_40ep.pth #new
 
   settings:
     epochs: 20
