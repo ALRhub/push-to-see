@@ -1,0 +1,17 @@
+database:
+  path: ~/Database_vrep_inria/ # Change this, if you want to save your dataset into another location
+  settings:
+    database_size: 1250 # Number of scenes to generate
+    max_num_obj: 32 # Maximum number of objects dropped per scene
+    min_num_obj: 24 # Minimum number of objects dropped per scene
+#    total_num_obj: 6 # Subset of objects that will be put into the random selection pool
+                      # (e.g., if set to 50, then first 50 object meshes in object_path will be used - from 000.urdf to 049.urdf)
+    drop_height: 0.1
+    remove_container: False
+
+data:
+  save_numpy: True # Flag to save depth images and segmentation masks as numpy arrays
+  save_png: True # Flag to save depth images and segmentation masks as png files
+  save_color_img: True # Flag to save RGB images
+  cam_height: 480
+  cam_width: 640
